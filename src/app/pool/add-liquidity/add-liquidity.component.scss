@@ -1,0 +1,230 @@
+:host
+{
+   width: 28rem;
+   color: white;
+}
+
+.wrapper {
+   max-width: 640px;
+   width: 100%;
+   padding: 20px 15px;
+   margin-top: 1rem;
+   margin-left: auto;
+   margin-right: auto;
+   border-radius: 24px;
+   background-color: rgb(25, 27, 31) !important;
+}
+
+.input-container {
+   color: #fff;
+   position: relative;
+   font-weight: 500;
+   font-size: 28px !important;
+   border: none;
+   outline: none;
+   white-space: nowrap;
+}
+
+.liquid-container {
+   display: flex;
+   padding: 20px 15px;
+   border-radius: 20px;
+   border: 1px solid rgb(25, 27, 31);
+   font-size: 18px;
+   background: #212429;
+   white-space: nowrap;
+   transition: height 1s ease 0s;
+   z-index: 99;
+
+   ::hover {
+      border: 1px solid rgb(64, 68, 79);
+   }
+
+   span {
+      cursor: pointer;
+      // padding: 10px 18px 10px 18px;
+      padding: 8px 18px;
+      background: rgb(44, 47, 54);
+      border-radius: 16px;
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+   }
+
+   input {
+      width: 100%;
+   }
+}
+
+.add-button-container {
+   margin-top: 20px;
+   margin-bottom: 20px;
+
+   button {
+      padding: 16px;
+      width: 100%;
+      color: #fff;
+      font-weight: 500;
+      font-size: 20px;
+      font-family: "Inter";
+      background-color: rgb(33, 114, 229);
+      border: 1px solid transparent;
+      border-radius: 24px;
+   }
+}
+
+.err-button {
+   background-color: gray !important;
+}
+
+
+.main-title {
+   font-family: "IBM Plex Mono";
+   font-weight: 500 !important;
+   font-size: 24px !important;
+   margin-left: 3px;
+}
+
+
+.back-icon
+{
+    margin-bottom: 4vh;
+    cursor: pointer;
+}
+
+.pool-overview
+{
+   display: flex;
+   align-items: center;
+}
+
+.lpA-container,
+.lpB-container
+{
+   display: flex;
+   padding: 10px 15px;
+   border-radius: 5px;
+   border-top-left-radius: 20px;
+   border-bottom-right-radius: 20px;
+   font-size: 16px;
+   background: #123c39;
+   font-weight: bold;
+   letter-spacing: 0.1mm;
+
+   span
+   {
+      cursor: pointer;
+      padding: 10px 10px;
+      padding-left: 18px;
+      background: #0e2b42;
+      border-radius: 5px;
+      border-top-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+   }
+}
+
+::placeholder {
+   color: gray;
+   opacity: 1; 
+ }
+
+ input
+ {
+   background: unset;
+   border: unset;
+   flex: 1 1 0;
+ }
+ 
+ input:focus{
+   outline: none;
+}
+
+*:focus {
+   outline: none;
+}
+
+.add-icon-container
+{
+   display: flex;
+   justify-content: center;
+
+   .mat-icon
+   {
+   font-size: 30px;
+   width: 30px;
+   height: 30px;
+   }
+}
+
+.liquidity-info {
+   margin-top: 4vh;
+   // text-align: center;
+
+   p {
+      font-family: "IBM Plex Mono";
+   }
+}
+
+.error
+{
+   color: crimson;
+   font-size: 16px;
+}
+
+.deploy-button-container
+{
+   margin-top: 25px;
+   display: flex;
+
+   button
+   {
+      width: 100%;
+      padding: 4px 0;
+   }
+}
+
+.spinner-container
+{
+   display: flex;
+   justify-content: center;
+   margin-top: 1vh;
+   margin-bottom: 1vh;
+}
+
+.mat-expansion-panel
+{
+   box-shadow: unset;
+   background: unset;
+
+   .mat-expansion-panel-header-title
+   {
+      color: gray;
+      font-size: 13px;
+   }
+}
+
+::ng-deep .mat-expansion-indicator:after {
+   color: gray;
+}
+
+.transaction-row-details
+{
+   display: flex;
+   justify-content: space-between;
+   color: gray;
+   font-size: 13px;
+   padding: 2px;
+}
+
+.swa
+{
+   display: flex;
+   justify-content: space-between;
+   color: gray;
+   font-size: 12px;
+   font-weight: bold;
+   padding: 0 20px;
+}

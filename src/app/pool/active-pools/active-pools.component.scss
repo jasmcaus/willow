@@ -1,0 +1,221 @@
+.pool-wrapper {
+    max-width: 870px !important;
+    width: 100%;
+    padding: 20px 0px;
+} 
+
+.pool-position-container {
+    padding: 20px 15px;
+    border-radius: 20px;
+    border: 1px solid rgb(25, 27, 31);
+    font-size: 18px;
+    background: rgb(25, 27, 31) !important;
+    white-space: nowrap;
+    transition: height 1s ease 0s;
+    z-index: 99;
+
+    ::hover {
+        border: 1px solid rgb(64, 68, 79);
+    }
+}
+
+td {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    border-radius: 16px 0px 0px 16px;
+}
+
+td:first-child {
+    padding-left: 20px;
+    padding-right: 0;
+}
+
+.pool {
+    cursor: pointer;
+    background: rgb(44, 47, 54);
+    border-radius: 16px;
+    margin-left: auto;
+}
+
+.position {
+    cursor: pointer;
+    padding: 20px !important;
+    background: rgb(44, 47, 54);
+    border-radius: 16px;
+    margin-left: auto;
+}
+
+.pool-title {
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+}
+
+.position-title {
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+}
+
+.accordion-div {
+    display: flex;
+    justify-content: space-between;
+    color: gray;
+    font-size: 13px;
+    margin: 3px 0;
+
+    span {
+        font-family: "Inter";
+        font-family: 500;
+        font-size: 16px;
+        color: rgb(195, 197, 203);
+    }
+}
+
+.special-margin {
+    margin-top: -40px !important;
+}
+
+
+.special-styles {
+    padding: 30px;
+}
+
+
+.active-liquidity-pool {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 24vh;
+}
+
+.active-pools-container {
+    color: white;
+    margin-top: 1vh;
+}
+
+.full-width {
+    width: 100%;
+
+    .flex-end {
+        display: flex;
+        font-family: "IBM Plex Mono" !important;
+        justify-content: flex-end;
+        border-radius: 0px 16px 16px 0px;
+    }
+}
+
+.f16 {
+    font-size: 16px;
+}
+
+.tac {
+    text-align: center;
+}
+
+table {
+    border-spacing: 0 0.5em;
+    border-collapse: separate;
+}
+
+.mat-stroked-button {
+    border: 1px solid white !important;
+    padding: 0 12px;
+    line-height: 30px;
+    font-size: 12px;
+    color: white;
+}
+
+.phc {
+    color:#cbe521;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 0.1mm;
+}
+
+.hb {
+    font-weight: bold;
+}
+
+.pr {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.lpmc {
+    margin-top: 10px;
+}
+
+.mat-expansion-panel-header {
+    height: 20px;
+}
+
+.mat-expansion-panel {
+   box-shadow: unset;
+   background: unset;
+
+   .mat-expansion-panel-header-title {
+      color: gray;
+      font-size: 13px;
+   }
+}
+
+::ng-deep .mat-expansion-indicator:after {
+   color: gray;
+}
+
+.mdr {
+    display: flex;
+    justify-content: space-between;
+    color: gray;
+    font-size: 13px;
+    margin: 1px 0;
+}
+
+.pool-overview-title {
+    font-family: "IBM Plex Mono";
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.positions-title {
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 16px;
+    color: rgb(143, 150, 172);
+}
+
+.pool-overview-container {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 0;
+    border-radius: 15px;
+}
+
+
+.pool-new-position-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+ 
+    button {
+       padding: 6px 8px;
+       width: 100%;
+       color: #fff;
+       font-weight: 500;
+       font-size: 16px;
+       font-family: "Inter";
+       background-color: rgb(33, 114, 229);
+       border: 1px solid transparent;
+       border-radius: 12px;
+    }
+ }
+ 

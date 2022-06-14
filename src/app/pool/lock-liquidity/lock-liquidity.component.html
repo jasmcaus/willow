@@ -1,0 +1,120 @@
+<div *ngIf="liquidity_to_lock.get('hash').value === ''">
+    <div class="back-icon" routerLink="/utility">
+        <mat-icon>arrow_back_ios_new</mat-icon>
+    </div>
+
+    <div class="spc" *ngIf="!liquidityLoaded">
+        <mat-spinner></mat-spinner>
+    </div>
+
+    <br/>
+    <br/>
+
+    <div class="pool-overview-container"> 
+        <div class="pool-overview-title">Your Positions</div>
+    </div>
+
+    <br/>
+
+    <ng-container *ngIf="user_positions.length !== 0; else specialstyles">
+        <main class="pool-position-container">
+            <div class="active-pools-container" *ngIf="fullyLoaded">
+                <table class="full-width">
+                    <ng-container *ngFor="let pool of user_positions">
+                        <tr
+                            class="pool"
+                            appDebounceClick
+                            (click)="lock(pool)"
+                        >
+                            <td class="pool-title">
+                                <img src="{{ pool['tokenA_logouri'] }}" class="token-logo">
+                                <img src="{{ pool['tokenB_logouri'] }}" class="token-logo">
+                                &nbsp;
+                                {{ pool['tokenA_symbol']}} / {{pool['tokenB_symbol'] }}
+                            </td>
+                            <td class="flex-end">
+                                {{ pool['user_liquidity'] | amountConverter}}
+                            </td>
+                        </tr>
+                    </ng-container>
+                </table>
+            </div>
+        </main>
+    </ng-container>
+    
+    <ng-template #specialstyles>
+        <main class="positions-container special-styles">
+            <div class="positions-title">There are no active pools. Try creating one!</div>
+        </main>
+    </ng-template>
+
+</div>
+
+
+<div *ngIf="liquidity_to_lock.get('hash').value !== ''" class="lock-liquidity-container">
+    <div class="back-icon" (click)="back()">
+        <mat-icon>arrow_back_ios_new</mat-icon>
+    </div>
+
+    <br/>
+    <br/>
+
+    <div class="pool-overview-container"> 
+        <div class="pool-overview-title">Lock Liquidity</div>
+    </div>
+
+
+    <br/>
+
+    <div class="liquidity-info">
+        <p>Locking liquidity is an easy way to build trust around the community. Once you lock your liquidity, you will not be able to unlock it until the lockup period has passed. Proceed at your own risk.</p>
+    </div>
+
+
+    <div class="wrapper">
+        <div class="llsc">
+            <!-- <span class="lls">{{liquidity_to_lock.get('symbol').value}}</span> -->
+            <div class="pool-title">
+                <img src="{{ liquidity_to_lock.get('tokenA_logouri').value }}" class="token-logo">
+                <img src="{{ liquidity_to_lock.get('tokenB_logouri').value }}" class="token-logo">
+                &nbsp;
+                {{ liquidity_to_lock.get('tokenA_symbol').value }} / {{liquidity_to_lock.get('tokenB_symbol').value }}
+            </div>
+        </div>
+
+
+        <form [formGroup]="liquidity_to_lock">
+            <div class="lcc rwsb">
+                <span>Available</span>
+                <span><input type="number" [readonly]="true" autocomplete="off" matInput formControlName="user_liquidity"/></span>
+            </div>
+
+            
+            <div class="lcc rwsb">
+                <span>Lock</span>
+                <span><input type="number" autocomplete="off" matInput formControlName="lock_amount" /></span>
+            </div>
+
+            <span class="message" *ngIf="showLockedAmountMessage">Minimum liquidity of 80% is recommended to lock up</span>
+        
+            <div class="lcc rwsb">
+                <span>Lockup Period (days)</span>
+                <span><input type="number" autocomplete="off" matInput formControlName="length" /></span>
+            </div>
+
+            <span class="message" *ngIf="showLockedUpLengthMessage">Minimum of 3 years (1 095 days) is recommended</span>
+        </form>
+        
+
+        <div class="lock-button-container">
+            <button 
+                class="mat-stroked-button-color"
+                mat-stroked-button
+                appDebounceClick
+                (click)="confirm()"
+            >
+                Confirm
+            </button>
+        </div>
+    </div>
+</div>

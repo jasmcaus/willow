@@ -1,0 +1,92 @@
+:host {
+    color: white;
+}
+
+.address-box {
+    cursor: pointer;
+    outline: none;
+    z-index: 99;
+    justify-self: center;
+    padding: 10px 15px;
+    border-radius: 16px;
+    align-items: center;
+    background-color: rgb(25, 27, 31);
+    font-family: "Inter";
+    font-size: 1rem;
+}
+
+.nav-container {
+    cursor: pointer;
+    outline: none;
+    z-index: 99;
+    justify-self: center;
+    width: fit-content;
+    padding: 2px;
+    border-radius: 16px;
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    background-color: rgb(25, 27, 31);
+    font-family: "Inter";
+    font-size: 1rem;
+    gap: 10px;
+
+    .active {
+        color: #fff;
+        background-color: rgb(33, 36, 41);
+        font-weight: 600;
+        border-radius: 3rem;
+    }
+
+    a {
+        font-weight: 500;
+        color: #fff !important;
+        font-family: "Inter";
+
+        .active {
+            color: #fff;
+            background-color: rgb(33, 36, 41);
+            font-weight: 600;
+            border-radius: 3rem;
+        }
+    }
+}
+
+.wallet-container {
+    position: absolute;
+    right: 1rem;
+
+    span {
+        color: white;
+        margin-right: 15px;
+        font-size: 16px;
+    }
+
+    button {
+        background-color: rgba(21, 61, 111, 0.44);
+        color: rgb(80, 144, 234);
+        border: 1px solid rgba(21, 61, 111, 0.44);
+        border-radius: 14px;
+        cursor: pointer;
+        user-select: none;
+        font-size: 16px;
+        font-weight: 500;
+        font-family: "Inter";
+        padding: 4px 20px;
+        margin-right: 2px;        
+        margin-left: 1px;
+
+        .hover {
+            border: 1px solid rgba(49, 95, 154, 0.44);
+            color: rgb(57, 130, 231);
+        }
+    }
+}
+
+.pt {
+    padding-top: 1rem;
+}
+
+.pf {
+    position: absolute;
+}

@@ -1,0 +1,93 @@
+:hos {
+    color: white;
+    font-family: 'Inter custom',sans-serif !important;
+}
+
+.task-header {
+    background-color: transparent;
+    padding: 0 15px;
+    height: 20px;
+
+    span {
+        font-family: "IBM Plex Mono";
+    }
+}
+
+.fx-spacer {
+    flex: 1 1 auto;
+}
+
+.tokens-container {
+    border-top: 1px solid rgb(64, 68, 79);
+
+    .token {
+        padding: 15px 15px;
+        display: grid;
+        grid-template-columns: auto minmax(auto, 1fr) auto minmax(0px, 72px);
+        gap: 16px;
+        font-weight: bold;
+        letter-spacing: 0.1mm;
+        cursor: pointer;
+    }
+
+    .token:hover {
+        background: rgb(64, 68, 79);
+    }
+}
+
+.token-title {
+    font-family: "IBM Plex Mono";
+    font-weight: 500;
+    font-size: 20px !important;
+}
+
+.token-subtitle {
+    font-family: "Inter";
+    font-weight: 300;
+    font-size: 13px !important;
+    letter-spacing: -0.1px;
+}
+
+::placeholder {
+    color: gray;
+    opacity: 1; 
+}
+
+input {
+    background: unset;
+    border: unset;
+    flex: 1 1 0;
+}
+
+input:focus {
+    outline: none;
+}
+
+*:focus {
+    outline: none;
+}
+
+.input-container {
+    padding: 10px 15px;
+    display: flex;
+
+    input {
+        border: 1px solid rgb(64, 68, 79);
+        font-size: 14px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+}
+
+h1 {
+    border-bottom: 1px solid rgb(64, 68, 79);
+    margin-bottom: 0;
+    padding-bottom: 16px;
+}
+
+.spinner-container
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 2vh;
+}

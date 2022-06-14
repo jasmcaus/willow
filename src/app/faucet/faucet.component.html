@@ -1,0 +1,87 @@
+<div class="faucet-wrapper">
+    <div class="active-faucets-container">
+        <div class="faucet-overview-container">
+            <div class="faucet-overview-title">Faucet</div>
+            <div>&nbsp;</div>
+            <div class="faucet-overview-subtitle">Request some tokens from our faucet to use in the app. Future versions will support the recognition of already existing tokens in your AElf wallet.</div>
+            <!-- <div class="faucet-new-position-container">
+                <button 
+                    class="mat-stroked-button-color" 
+                    appDebounceClick
+                    routerLink="/faucet/add-liquidity"
+                >
+                    + New Position
+                </button>
+            </div> -->
+        </div>
+        
+
+        <div class="faucet-button-container">
+            <button 
+                class="mat-stroked-button-color"
+                appDebounceClick
+                (click)="claim_from_faucet()"
+            >
+                Claim Tokens
+            </button>
+        </div>
+
+        <!-- <ng-container *ngIf="logined && !loading">
+            <ng-container *ngIf="faucets.length !== 0; else specialstyles">
+                <main class="positions-container">
+                    <ng-container *ngFor="let faucet of faucets">
+                        <div class="pr">
+                            <div class="phc">{{faucet['tokenA']}} / {{faucet['tokenB']}}</div>
+                             <div class="flex-end">
+                                <button class="mat-stroked-button-color" 
+                                    mat-stroked-button
+                                    appDebounceClick
+                                    routerLink="/faucet/remove-liquidity/{{faucet['contract']}}">Remove Liquidity
+                                </button>
+                            </div> 
+                        </div>
+                        
+                        <div class="lpmc">
+                            <mat-accordion>
+                                <mat-expansion-panel>
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        More details
+                                    </mat-panel-title>
+                                </mat-expansion-panel-header>
+                                
+                                <div class="mdr">
+                                    <span>Total supply</span>
+                                    <span>{{faucet['totalSupply'] | amountConverter}}</span>
+                                </div>
+                                <div class="mdr">
+                                    <span>Your position</span>
+                                    <span>{{faucet['amount'] | amountConverter}}</span>
+                                </div>
+                                <div class="mdr">
+                                    <span>Shares of faucet</span>
+                                    <span>{{faucet['sharesOfPool']}} %</span>
+                                </div>
+                                <div class="mdr">
+                                    <span>Total {{faucet['tokenASymbol']}}</span>
+                                    <span>{{faucet['tokenAAmount'] | amountConverter}} {{faucet['tokenASymbol']}}</span>
+                                </div>
+                                <div class="mdr">
+                                    <span>Total {{faucet['tokenBSymbol']}}</span>
+                                    <span>{{faucet['tokenBAmount'] | amountConverter}} {{faucet['tokenBSymbol']}}</span>
+                                </div>
+                                </mat-expansion-panel>
+                            </mat-accordion>
+                        </div>
+                    </ng-container>
+                </main>
+            </ng-container>
+            
+            <ng-template #specialstyles>
+                <main class="positions-container special-styles">
+                    <div class="positions-title">Your active positions will appear here</div>
+                </main>
+            </ng-template>
+        </ng-container> -->
+    </div>
+</div>

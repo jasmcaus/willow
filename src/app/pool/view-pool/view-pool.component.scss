@@ -1,0 +1,146 @@
+:host {
+    max-width: 870px;
+    width: 100%;
+    padding: 20px 0px;
+    font-family: "IBM Plex Mono";
+}
+
+
+.pool-wrapper {
+    max-width: 970px !important;
+    width: 100%;
+    padding: 20px 0px;
+} 
+
+
+.to-bold {
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+
+.overview-title {
+    font-family: "IBM Plex Mono";
+    font-weight: 500;
+    font-size: 32px;
+}
+
+
+.overview-container {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 0;
+    border-radius: 15px;
+}
+
+.lock-liquidity-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+ 
+    button {
+       padding: 6px 8px;
+       width: 100%;
+       color: #fff;
+       font-weight: 500;
+       font-size: 16px;
+       font-family: "Inter";
+       background-color: rgb(33, 114, 229);
+       border: 1px solid transparent;
+       border-radius: 12px;
+    }
+ }
+
+.chart-container {
+    padding: 20px 15px;
+    border-radius: 20px;
+    border: 1px solid rgb(25, 27, 31);
+    font-size: 18px;
+    background: rgb(25, 27, 31) !important;
+    white-space: nowrap;
+    transition: height 1s ease 0s;
+    z-index: 99;
+
+    ::hover {
+        border: 1px solid rgb(64, 68, 79);
+    }
+
+    // span {
+    //     cursor: pointer;
+    //     // padding: 10px 18px 10px 18px;
+    //     padding: 8px 18px;
+    //     background: rgb(44, 47, 54);
+    //     border-radius: 16px;
+    //     margin-left: auto;
+    //     display: flex;
+    //     align-items: center;
+    // }
+}
+
+.vpc
+{
+    display: flex;
+    grid-auto-rows: auto;
+    gap: 30px;
+}
+
+.vpdc
+{
+    flex: 2 1 0;
+    margin-left: -3rem;
+}
+
+.vpd
+{
+    flex: 1 1 0;
+}
+
+.ts
+{
+    color: #cbe521;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 0.1mm;
+    margin-bottom: 5rem;
+}
+
+.vpd
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.vpdr
+{
+    display: flex;
+    justify-content: space-between;
+    margin: 1px 0;
+}
+
+.pl
+{
+    padding-left: 15px;
+    color: gray;
+}
+.sc
+{
+    padding: 1.5rem;
+}
+
+.full-width
+{
+    width: 100%;
+
+    .flex-end
+    {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+h1
+{
+    margin-top: 4vh;
+}

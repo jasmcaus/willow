@@ -1,0 +1,108 @@
+:host
+{
+    width: 28rem;
+    color:white;
+}
+
+.back-icon
+{
+    margin-bottom: 4vh;
+    cursor: pointer;
+}
+
+.pool-row
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.p-10-bottom
+{
+    padding-bottom: 10px;
+}
+
+.p-20
+{
+    padding: 20px 0;
+}
+
+.full-width
+{
+    width: 100%;
+}
+
+.flex-end
+{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.mat-radio-group
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.mat-radio-checked
+{
+    border: 1px solid white;
+    font-weight: 500;
+    color: white;
+}
+
+.mat-radio-button
+{
+    letter-spacing: 1px;
+    border-radius: 5px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding-left: 15px;
+    padding-right: 25px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+
+::ng-deep 
+{
+    .mat-radio-container
+    {
+        display: none !important;
+    }
+
+    .mat-radio-label
+    {
+        margin-bottom: unset !important;
+    }
+}
+
+
+.button-container
+{
+   margin-top: 20px;
+   margin-bottom: 20px;
+   button
+   {
+      width: 100%;
+      padding: 4px 0;
+   }
+}
+
+.spinner
+{
+    margin-top: 10px;
+}
+
+.hb
+{
+    font-weight: bold;
+}
+
+.rlp
+{
+    color: #cbe521;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 0.1mm;
+}

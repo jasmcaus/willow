@@ -1,0 +1,76 @@
+<div class="back-icon" routerLink="/pool">
+  <mat-icon>arrow_back_ios_new</mat-icon>
+</div>
+
+<h1>Remove Liquidity</h1>
+
+<form [formGroup]="pool">
+  <div class="p-20">
+    <table class="full-width">
+        <tr>
+          <th>Pool</th>
+          <th class="flex-end">Total</th>
+        </tr>
+        <tr>
+          <td class="rlp">{{pool.get('poolName').value}}</td>
+          <td class="flex-end">{{pool.get('poolAmountDisplay').value}}</td>
+        </tr>
+    </table>
+  </div>
+
+  <div class="pool-row p-20">
+      <span class="hb">Amount</span>
+  </div>
+  <div class="p-10-bottom">
+      <!-- formControlName="time" -->
+      <mat-radio-group formControlName="percentToTakeOut">  
+          <mat-radio-button value="0.25" >25%</mat-radio-button>
+          <mat-radio-button value="0.50">50%</mat-radio-button>
+          <mat-radio-button value="0.75">75%</mat-radio-button>
+          <mat-radio-button value="1">100%</mat-radio-button>
+      </mat-radio-group>
+  </div>
+
+  <div class="p-20">
+      <table class="full-width">
+          <tr>
+            <th>You will recieve</th>
+            <th>Amount</th>
+            <th class="flex-end">Minumum</th>
+          </tr>
+          <tr *ngIf="tokenALoaded && tokenBLoaded">
+            <td class="rlp">{{pool.get('tokenASymbol').value}}</td>
+            <td>{{pool.get('tokenAAmountDisplay').value}}</td>
+            <td class="flex-end">{{pool.get('tokenAMinAmountDisplay').value}}</td>
+          </tr>
+          <tr *ngIf="tokenALoaded && tokenBLoaded">
+            <td class="rlp">{{pool.get('tokenBSymbol').value}}</td>
+            <td>{{pool.get('tokenBAmountDisplay').value}}</td>
+            <td class="flex-end">{{pool.get('tokenBMinAmountDisplay').value}}</td>
+          </tr>
+          <tr *ngIf="!tokenALoaded && !tokenBLoaded">
+            <td></td>
+            <td><mat-spinner class="spinner" diameter="30"></mat-spinner></td>
+            <td></td>
+          </tr>
+      </table>
+  </div>
+
+</form>
+
+<div class="button-container">
+    <button *ngIf="!loading && txId === ''" class="mat-stroked-button-color" 
+    mat-stroked-button
+    appDebounceClick
+    (click)="removeLiquidity()">Remove Liquidity
+    </button>
+</div>
+
+<div class="spinner-container" *ngIf="loading">
+  <mat-spinner diameter="40"></mat-spinner>
+</div>
+
+<div class="txc" *ngIf="txId !== ''">
+  <p>Your transaction has been broadcasted to the network, it may take up to 15s to process</p>
+  <a target="_blank" href="https://neo3.testnet.neotube.io/transaction/{{txId}}">Check the progress on NeoTube</a>
+</div>

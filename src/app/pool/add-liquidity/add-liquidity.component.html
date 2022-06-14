@@ -1,0 +1,184 @@
+<div class="back-icon" routerLink="/pool">
+    <mat-icon>arrow_back_ios_new</mat-icon>
+</div>
+
+<div class="wrapper">
+    <h1 class="main-title">Add Liquidity</h1>
+    <div *ngIf="tokenA_balance > 0" class="swa">
+        <span>Balance</span>
+        <span>{{token.get('tokenABalance').value | amountConverter}}</span>
+    </div>
+    <div class="liquid-container">
+        <input 
+            type="text" 
+            class="input-container"
+            autocomplete="off" 
+            value="{{token.get('tokenAAmount').value}}" 
+            matInput 
+            (input)="tokenAAmountInput($event.target)" 
+            placeholder="0.0"
+        >
+        <span 
+            class="token-box" 
+            (click)="openTokenSelectDialog('tokenA')"
+            *ngIf="token.get('tokenASymbol').value !== ''"
+        >
+            <img src="{{ token.get('tokenALogo').value }}" class="token-logo" />
+            &nbsp;
+            {{token.get('tokenASymbol').value}} <mat-icon>keyboard_arrow_down</mat-icon>
+        </span>
+        <span 
+            class="token-box" 
+            (click)="openTokenSelectDialog('tokenA')" 
+            *ngIf="token.get('tokenASymbol').value === ''"
+        >
+            Choose a token <mat-icon>keyboard_arrow_down</mat-icon>
+        </span>
+    </div>
+
+    <div class="add-icon-container">
+        <mat-icon>add</mat-icon>
+    </div>
+
+
+    <div *ngIf="tokenB_balance > 0" class="swa">
+        <span>Balance</span>
+        <span>{{token.get('tokenBBalance').value | amountConverter}}</span>
+    </div>
+
+    <div class="liquid-container">
+        <input 
+            type="number" 
+            class="input-container"
+            autocomplete="off" 
+            value="{{token.get('tokenBAmount').value}}" 
+            matInput 
+            (input)="tokenBAmountInput($event.target)" 
+            placeholder="0.0"
+        >
+        <span 
+            class="token-box" 
+            (click)="openTokenSelectDialog('tokenB')"
+            *ngIf="token.get('tokenBSymbol').value !== ''"
+        >
+            <img src="{{ token.get('tokenBLogo').value }}" class="token-logo" />
+            &nbsp;
+            {{token.get('tokenBSymbol').value}} <mat-icon>keyboard_arrow_down</mat-icon>
+        </span>
+        <span 
+            class="token-box" 
+            (click)="openTokenSelectDialog('tokenB')" 
+            *ngIf="token.get('tokenBSymbol').value === ''"
+        >
+            Choose a token <mat-icon>keyboard_arrow_down</mat-icon>
+        </span>
+    </div>
+</div>
+
+<div *ngIf="showPoolShare">
+    <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+                Prices and pool share
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="transaction-row-details">
+            <span>Your share of the pool</span>
+            <span>{{token.get('poolShares').value}} %</span>
+          </div>
+          
+          <div class="transaction-row-details">
+            <span>1 {{token.get('tokenASymbol').value}}</span>
+            <span>{{token.get('tokenAPerTokenB').value}} {{token.get('tokenBSymbol').value}}</span>
+            
+          </div>
+
+          <div class="transaction-row-details">
+            <span>1 {{token.get('tokenBSymbol').value}}</span>
+            <span>{{token.get('tokenBPerTokenA').value}} {{token.get('tokenASymbol').value}}</span>
+          </div>
+          
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
+
+
+    <div class="liquidity-info" *ngIf="is_first_liquidity && !pool_does_not_exist && !loading">
+        <p>You are the first liquidity provider.</p>
+        <p>The ratio of tokens you add will set the price of this pool.</p>
+    </div>
+
+    <div class="liquidity-info error" *ngIf="pool_does_not_exist && !loading">
+        <p>Liquidity pool does not exist!</p> 
+    </div>
+
+    <div class="deploy-button-container" *ngIf="pool_does_not_exist && !loading">
+        <button class="mat-stroked-button-color"
+        mat-stroked-button
+        appDebounceClick
+        routerLink="/pool/all">
+            View all available liquidity pools
+        </button>
+    </div>
+
+    <div class="spinner-container" *ngIf="loading">
+        <mat-spinner diameter="50"></mat-spinner>
+    </div>
+
+    <div 
+        class="add-button-container" 
+        *ngIf="!pool_does_not_exist && !is_insufficient_balance()"
+    >
+        <button 
+            *ngIf="!adding_lp && !are_inputs_invalid()"
+            class="mat-stroked-button-color"
+            mat-stroked-button
+            appDebounceClick
+            (click)="addLiquidity()"
+            [disabled]="are_inputs_invalid()"
+        >
+            Supply
+        </button>
+    </div>
+
+    <div 
+        class="add-button-container" 
+        *ngIf="are_inputs_invalid()"
+    >
+        <button 
+            *ngIf="!adding_lp" 
+            class="err-button  mat-stroked-button-color"
+            mat-stroked-button
+            [disabled]="true"
+        >
+            Enter an amount
+        </button>
+    </div>
+
+    <div 
+        class="add-button-container" 
+        *ngIf="!pool_does_not_exist && !are_inputs_invalid() && is_insufficient_balance()"
+    >
+        <button 
+            *ngIf="!adding_lp" 
+            class="err-button mat-stroked-button-color"
+            mat-stroked-button
+            appDebounceClick
+            [disabled]="true"
+        >
+            Insufficient Balance
+        </button>
+    </div>
+
+
+    <div 
+        class="liquidity-info" 
+        *ngIf="!is_first_liquidity && !pool_does_not_exist && !loading && !adding_lp"
+    >
+        <p>When you add liquidity, you will receive pool tokens (WLP) representing your position. These tokens automatically earn fees that are proportional to your share of the pool.</p>
+    </div>
+
+    <div class="spinner-container" *ngIf="adding_lp">
+        <mat-spinner diameter="40"></mat-spinner>
+    </div>

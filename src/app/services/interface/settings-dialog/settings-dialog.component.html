@@ -1,0 +1,60 @@
+<h1 mat-dialog-title matDialogTitle>
+    <mat-toolbar role="toolbar" class="task-header">
+        <span>Settings</span>
+        <span class="fx-spacer"></span>
+         <button mat-icon-button matDialogClose>
+            <mat-icon mat-list-icon>close</mat-icon>
+        </button>
+    </mat-toolbar>
+</h1>
+
+<div class="dialog-container">
+    <form [formGroup]="settings">
+
+        <div class="input-container">
+            <div>
+                <span>Slippage Tolerance</span>
+            </div>
+            <div class="end">
+                <input 
+                    type="number" 
+                    autocomplete="off" 
+                    matInput 
+                    formControlName="slippage"
+                    placeholder="0.0">
+            </div>
+        </div>
+    
+        <div class="divider"></div>
+    
+        <div class="input-container">
+            <div>
+                <span>Tx Deadline (mins)</span>
+            </div>
+            <div class="end">
+                <input 
+                    type="number" 
+                    autocomplete="off" 
+                    matInput 
+                    formControlName="deadline"
+                    placeholder="0.0">
+            </div>
+        </div>
+    
+        <div class="divider"></div>
+    
+        <div class="input-container smaller-p">
+            <div>
+                <span>Disable Multihops</span>
+            </div>
+            <div class="slider-end">
+                <mat-slide-toggle
+                formControlName="disableMultihops">
+                  </mat-slide-toggle>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- (input)="tokenAAmountInput($event.target)"  -->
+<!-- value="{{token.get('tokenAAmount').value}}"  -->

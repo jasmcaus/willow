@@ -1,0 +1,166 @@
+:host {
+    width: 38rem;
+    padding: 20px 0;
+}
+
+.faucet-wrapper {
+    max-width: 870px !important;
+    width: 100%;
+    padding: 20px 0px;
+}
+
+.positions-container {
+    background-color: rgb(25, 27, 31);
+    border-radius: 20px;
+    padding: 8px;
+
+}
+
+
+.special-styles {
+    padding: 30px;
+}
+
+
+.active-liquidity-faucet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 24vh;
+}
+
+.active-faucets-container {
+    color: white;
+    margin-top: 1vh;
+}
+
+.full-width {
+    width: 100%;
+
+    .flex-end
+ {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+.f16 {
+    font-size: 16px;
+}
+
+.tac {
+    text-align: center;
+}
+
+table {
+    border-spacing: 0 0.5em;
+    border-collapse: separate;
+}
+
+.mat-stroked-button {
+    border: 1px solid white !important;
+    padding: 0 12px;
+    line-height: 30px;
+    font-size: 12px;
+    color: white;
+}
+
+.phc {
+    color:#cbe521;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 0.1mm;
+}
+
+.hb {
+    font-weight: bold;
+}
+
+.pr {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.lpmc {
+    margin-top: 10px;
+}
+
+.mat-expansion-panel-header {
+    height: 20px;
+}
+
+.mat-expansion-panel {
+   box-shadow: unset;
+   background: unset;
+
+   .mat-expansion-panel-header-title {
+      color: gray;
+      font-size: 13px;
+   }
+}
+
+::ng-deep .mat-expansion-indicator:after {
+   color: gray;
+}
+
+.mdr {
+    display: flex;
+    justify-content: space-between;
+    color: gray;
+    font-size: 13px;
+    margin: 1px 0;
+}
+
+.faucet-overview-title {
+    font-family: "IBM Plex Mono";
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.faucet-overview-subtitle {
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 16px;
+    color: rgb(143, 150, 172);
+    
+}
+
+
+.positions-title {
+    font-family: "Inter";
+    font-weight: 300;
+    font-size: 16px;
+    color: rgb(143, 150, 172);
+}
+
+.faucet-overview-container {
+    color: white;
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+
+    padding: 10px 0;
+    border-radius: 15px;
+}
+
+
+.faucet-button-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+ 
+    button {
+       padding: 20px 16px;
+       width: 100%;
+       color: #fff;
+       font-weight: 500;
+       font-size: 20px;
+       font-family: "Inter";
+       background-color: rgb(33, 114, 229);
+       border: 1px solid transparent;
+       border-radius: 24px;
+    }
+ }
+ 

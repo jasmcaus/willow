@@ -1,0 +1,246 @@
+syntax = "proto3";
+
+// some core imports for aelf chain types
+import "aelf/core.proto";
+import "aelf/options.proto";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+
+// the name of the C# namespace in which the contract code will be,
+// generated code will also be in this namespace.
+option csharp_namespace = "Willow.Contracts.WillowContract";
+ 
+// the contract definition: a gRPC service definition.
+service WillowContractContract {
+    option (aelf.csharp_state) = "Willow.Contracts.WillowContract.WillowContractContractState";
+
+    /*
+        Token
+    */
+    rpc faucet(FaucetInput) returns (google.protobuf.Empty) { }
+    rpc transfer(TransferTokenInput) returns (google.protobuf.Empty) { }
+    rpc get_all_tokens (aelf.Address) returns (TokenList) {
+        option (aelf.is_view) = true;
+    }
+    rpc get_balance (google.protobuf.Int64Value) returns (google.protobuf.Int64Value) {
+        option (aelf.is_view) = true;
+    }
+    rpc get_contract_balance_for (google.protobuf.Int64Value) returns (google.protobuf.Int64Value) {
+        option (aelf.is_view) = true;
+    }
+
+    /*
+        Factory
+    */
+    rpc create_exchange_pair(CreateExchangePairInput) returns (google.protobuf.Empty) { }
+    rpc get_exchange_pair(GetExchangePairInput) returns (GetExchangePairOutput) {
+        option (aelf.is_view) = true;
+    }
+    rpc get_all_exchange_pairs(google.protobuf.Empty) returns (ExchangePairList) {
+        option (aelf.is_view) = true;
+    }
+
+    /*
+        Router
+    */
+    rpc add_liquidity(AddLiquidityInput) returns (AddLiquidityOutput) { }
+    rpc remove_liquidity(RemoveLiquidityInput) returns (RemoveLiquidityOutput) { }
+    rpc swap_tokenin_for_tokenout(SwapTokenInForTokenOutInput) returns (google.protobuf.Empty) { }
+    rpc swap_tokenout_for_tokenin(SwapTokenOutForTokenInInput) returns (google.protobuf.Empty) { }
+    rpc swap(SwapInput) returns (google.protobuf.Empty) { }
+    rpc safe_swap(SwapPairInput) returns (google.protobuf.Empty) { }
+
+    /*
+        Lock
+    */
+    rpc lock_liquidity(LockLiquidityInput) returns (google.protobuf.Empty) { }
+}
+
+
+// Token
+message Token {
+    aelf.Address owner = 1;
+    int64 id = 2;
+    int64 decimals = 3;
+    string symbol = 4;
+    int64 balance = 5;
+    int64 total_supply = 6;
+}
+
+message TokenList {
+    repeated Token tokens = 1;
+}
+
+message NewTokenInput {
+    int64 id = 2;
+    int64 decimals = 3;
+    string symbol = 4;
+    int64 amount_to_issue = 5;
+    int64 total_supply = 6;
+}
+
+message TransferTokenInput {
+    int64 token_id = 1;
+    aelf.Address from = 2;
+    aelf.Address to = 3;
+    int64 amount = 4;
+}
+
+message GetBalanceInput {
+    int64 token_id = 1;
+    aelf.Address owner = 2;
+}
+
+/*
+    Factory
+*/
+message ExchangePair {
+    int64 tokenA_id = 1;
+    int64 tokenB_id = 2;
+    string hash = 3;
+    int64 reserve_tokenA = 4;
+    int64 reserve_tokenB = 5;
+    int64 total_liquidity = 6;
+}
+
+message ExchangePairList {
+    repeated ExchangePair pairs = 1;
+}
+
+message GetExchangePairInput {
+    int64 tokenA_id = 1;
+    int64 tokenB_id = 2;
+}
+
+message GetExchangePairOutput {
+    int64 pair_location = 1;
+    ExchangePair pair = 2;
+}
+
+message CreateExchangePairInput {
+    int64 tokenA_id = 1;
+    int64 tokenB_id = 2;
+}
+
+/*
+    Router
+*/
+message AddLiquidityInput {
+    aelf.Address sender = 1;
+    int64 tokenA_id = 2;
+    int64 tokenB_id = 3;
+    int64 amountA_desired = 4;
+    int64 amountB_desired = 5;
+    int64 amountA_min = 6;
+    int64 amountB_min = 7;
+    google.protobuf.Timestamp deadline = 8;
+}
+
+message AddLiquidityOutput {
+    int64 actualA_amount = 1;
+    int64 actualB_amount = 2;
+    int64 liquidity = 3;
+}
+
+message MintLpTokensOutput {
+    int64 liquidity = 1;
+    ExchangePair pair = 2;
+}
+
+
+message RemoveLiquidityInput {
+    aelf.Address sender = 1;
+    Token tokenA = 2;
+    Token tokenB = 3;
+    int64 liquidity = 4;
+    int64 amountA_min = 5;
+    int64 amountB_min = 6;
+    google.protobuf.Timestamp deadline = 7;
+}
+
+message RemoveLiquidityOutput {
+    int64 actualA_amount = 1;
+    int64 actualB_amount = 2;
+}
+
+message SwapTokenInForTokenOutInput {
+    aelf.Address sender = 1;
+    TokenPaths paths = 2;
+    int64 amount_in = 4;
+    int64 amount_out_min = 5;
+    google.protobuf.Timestamp deadline = 6;
+}
+
+message SwapTokenOutForTokenInInput {
+    aelf.Address sender = 1;
+    TokenPaths paths = 2;
+    int64 amount_out = 4;
+    int64 amount_in_max = 5;
+    google.protobuf.Timestamp deadline = 6;
+}
+
+message SwapInput {
+    LongList amounts = 1;
+    TokenPaths paths = 2;
+    aelf.Address sender = 3;
+}
+
+message SwapPairInput {
+    int64 tokenA_id = 1;
+    int64 tokenB_id = 2;
+    int64 amountA_out = 3;
+    int64 amountB_out = 4;
+    aelf.Address to = 5;
+}
+
+message TokenPaths {
+    repeated Token list = 1;
+}
+
+message LongList {
+    repeated int64 list = 1;
+}
+
+message FaucetInput {
+    repeated NewTokenInput tokens = 1;
+}
+
+message LockLiquidityInput {
+    int64 tokenA_id = 1;
+    int64 tokenB_id = 2;
+}
+
+/* 
+ *
+ *
+    Events
+ *
+ * 
+*/
+message TokenCreated {
+    option (aelf.is_event) = true;
+    aelf.Address owner = 1;
+    int64 id = 2;
+    int64 decimals = 3;
+    string symbol = 4;
+    int64 balance = 5;
+    int64 total_supply = 6;
+}
+
+message ExchangePairCreated {
+    option (aelf.is_event) = true;
+    int64 tokenA_id = 1;
+    int64 tokenB_id = 2;
+    string hash = 3;
+}
+
+message TokenTransferred {
+    option (aelf.is_event) = true;
+    int64 token_id = 1;
+    aelf.Address from = 2;
+    aelf.Address to = 3;
+    int64 amount = 4;
+}

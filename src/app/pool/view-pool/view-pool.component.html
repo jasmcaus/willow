@@ -1,0 +1,80 @@
+<div class="view-pool-wrapper">
+
+    <div class="overview-container"> 
+        <div class="overview-title">
+            <img src="{{ pool['tokenA_logouri'] }}" class="token-logo">
+            <img src="{{ pool['tokenB_logouri'] }}" class="token-logo">
+            {{ pool.tokenA_symbol }}/{{ pool.tokenB_symbol }}
+        </div>
+        <div class="lock-liquidity-container">
+            <button 
+                class="mat-stroked-button-color" 
+                appDebounceClick
+                routerLink="/pool/lock"
+            >
+                + Lock Liquidity
+            </button>
+        </div>
+    </div>
+
+    <br/>
+    <br/>
+    
+    <div class="vpc">
+        <div class="vpdc chart-container">
+            <app-doughnut-chart [doughnutChartData]="doughnutChartData"></app-doughnut-chart>
+        </div>
+
+        <div class="vpd chart-container">
+            <div class="vpdr">
+                <span class="to-bold">Pool Supply</span>
+                <span>{{ pool.totalSupply | amountConverter}}</span>
+            </div>
+            <div class="vpdr pl">
+                <span>{{ pool.tokenA_symbol}}</span>
+                <span>{{ pool.tokenA_amount | amountConverter }}</span>
+            </div>
+            <div class="vpdr pl">
+                <span>{{ pool.tokenB_symbol }}</span>
+                <span>{{ pool.tokenB_amount | amountConverter }}</span>
+            </div>
+
+            <div class="sc"></div>
+
+            <div class="vpdr to-bold">
+                <span>Locked Supply</span>
+                <span>{{ totalAmountLockedDisplay | amountConverter}}</span>
+            </div>
+            <div class="vpdr pl">
+                <span>{{ pool.tokenA_symbol}}</span>
+                <span>{{ totalTokenAAmountLocked | amountConverter }}</span>
+            </div>
+            <div class="vpdr pl">
+                <span>{{ pool.tokenB_symbol }}</span>
+                <span>{{ totalTokenBAmountLocked | amountConverter }}</span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div>
+        <h1 class="overview-title">Pool Locks</h1>
+        <table *ngIf="locks.length > 0" class="full-width">
+            <tr>
+                <th>Owner</th>
+                <th>Amount</th>
+                <th class="flex-end">Unlock (Days)</th>
+            </tr>
+            
+            <tr *ngFor="let l of locks">
+                <td class="lpth">{{l.ownerShortened}}</td>
+                <td>{{l.amount | amountConverter}}</td>
+                <td class="flex-end">{{l.endDate}}</td>
+            </tr>
+        </table>
+
+        <span *ngIf="locks.length === 0">
+            No locks have been created for this pool!!
+        </span>
+    </div> -->
+</div>

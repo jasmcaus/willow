@@ -1,0 +1,141 @@
+:host
+{
+    color: white;
+    font-family: 'Inter custom',sans-serif !important;
+}
+
+.task-header 
+{
+    background-color: transparent;
+    padding: 0 15px;
+    height: 20px;
+}
+
+.fx-spacer 
+{
+    flex: 1 1 auto;
+}
+
+.tokens-container
+{
+    border-top: 1px solid rgb(64, 68, 79);
+    .token
+    {
+        padding: 15px 15px;
+        cursor: pointer;
+    }
+
+    .token:hover
+    {
+        background: rgb(64, 68, 79);
+    }
+}
+
+
+::placeholder {
+    color: gray;
+    opacity: 1; 
+}
+
+input
+{
+    background: unset;
+    border: unset;
+    flex: 1 1 0;
+}
+
+input:focus{
+    outline: none;
+}
+
+*:focus {
+    outline: none;
+}
+
+.input-container
+{
+    padding: 10px 15px;
+    display: flex;
+
+    input
+    {
+        border: 1px solid rgb(64, 68, 79);
+        font-size: 14px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+}
+
+h1
+{
+    border-bottom: 1px solid rgb(64, 68, 79);
+    margin-bottom: 0;
+    padding-bottom: 16px;
+}
+
+.settings-dialog-container
+{
+    padding: 20px 15px;
+}
+
+.input-container
+{
+   display: flex;
+   align-items: center;
+   padding: 15px 15px;
+   border-radius: 5px;
+   border-top-left-radius: 20px;
+   border-bottom-right-radius: 20px;
+   background: #123c39;
+
+   .slider-end,
+   .end
+   {
+       margin-left: auto;
+
+       input[type='number']{
+           width: 40px;
+        } 
+   }
+
+   .slider-end
+   {
+       padding-right: 5px;
+   }
+}
+
+.smaller-p
+{
+    padding: 12px 15px;
+}
+
+::placeholder {
+    color: gray;
+    opacity: 1; 
+}
+ 
+input
+{
+    background: unset;
+    border: unset !important;
+    padding: unset !important;
+    border-radius: unset !important;
+}
+
+input:focus{
+    outline: none;
+}
+
+*:focus {
+    outline: none;
+}
+
+.dialog-container
+{
+    padding: 20px;
+}
+
+.divider
+{
+    padding: 10px
+}

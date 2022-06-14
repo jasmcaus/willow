@@ -1,0 +1,417 @@
+:host {
+    width: 32rem;
+}
+
+.liquidity-info {
+    margin-top: 4vh;
+ 
+    p {
+       font-family: "IBM Plex Mono";
+    }
+ }
+
+.pool-position-container {
+    padding: 20px 15px;
+    border-radius: 20px;
+    border: 1px solid rgb(25, 27, 31);
+    font-size: 18px;
+    background: rgb(25, 27, 31) !important;
+    white-space: nowrap;
+    transition: height 1s ease 0s;
+    z-index: 99;
+
+    ::hover {
+        border: 1px solid rgb(64, 68, 79);
+    }
+}
+
+td {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    border-radius: 16px 0px 0px 16px;
+}
+
+td:first-child {
+    padding-left: 20px;
+    padding-right: 0;
+}
+
+.pool {
+    cursor: pointer;
+    background: rgb(44, 47, 54);
+    border-radius: 16px;
+    margin-left: auto;
+}
+
+.position {
+    cursor: pointer;
+    padding: 20px !important;
+    background: rgb(44, 47, 54);
+    border-radius: 16px;
+    margin-left: auto;
+}
+
+.pool-title {
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+}
+
+.position-title {
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+}
+
+.accordion-div {
+    display: flex;
+    justify-content: space-between;
+    color: gray;
+    font-size: 13px;
+    margin: 3px 0;
+
+    span {
+        font-family: "Inter";
+        font-family: 500;
+        font-size: 16px;
+        color: rgb(195, 197, 203);
+    }
+}
+
+.special-margin {
+    margin-top: -40px !important;
+}
+
+
+.special-styles {
+    padding: 30px;
+}
+
+
+.active-liquidity-pool {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 24vh;
+}
+
+.active-pools-container {
+    color: white;
+    margin-top: 1vh;
+}
+
+.full-width {
+    width: 100%;
+
+    .flex-end {
+        display: flex;
+        font-family: "IBM Plex Mono" !important;
+        justify-content: flex-end;
+        border-radius: 0px 16px 16px 0px;
+    }
+}
+
+.f16 {
+    font-size: 16px;
+}
+
+.tac {
+    text-align: center;
+}
+
+table {
+    border-spacing: 0 0.5em;
+    border-collapse: separate;
+}
+
+.mat-stroked-button {
+    border: 1px solid white !important;
+    padding: 0 12px;
+    line-height: 30px;
+    font-size: 12px;
+    color: white;
+}
+
+.phc {
+    color:#cbe521;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 0.1mm;
+}
+
+.hb {
+    font-weight: bold;
+}
+
+.pr {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.lpmc {
+    margin-top: 10px;
+}
+
+.mat-expansion-panel-header {
+    height: 20px;
+}
+
+.mat-expansion-panel {
+   box-shadow: unset;
+   background: unset;
+
+   .mat-expansion-panel-header-title {
+      color: gray;
+      font-size: 13px;
+   }
+}
+
+::ng-deep .mat-expansion-indicator:after {
+   color: gray;
+}
+
+.mdr {
+    display: flex;
+    justify-content: space-between;
+    color: gray;
+    font-size: 13px;
+    margin: 1px 0;
+}
+
+.pool-overview-title {
+    font-family: "IBM Plex Mono";
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.positions-title {
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 16px;
+    color: rgb(143, 150, 172);
+}
+
+.pool-overview-container {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 0;
+    border-radius: 15px;
+}
+
+
+.pool-new-position-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+ 
+    button {
+       padding: 6px 8px;
+       width: 100%;
+       color: #fff;
+       font-weight: 500;
+       font-size: 16px;
+       font-family: "Inter";
+       background-color: rgb(33, 114, 229);
+       border: 1px solid transparent;
+       border-radius: 12px;
+    }
+ }
+ 
+ .wrapper {
+    max-width: 640px;
+    width: 100%;
+    padding: 10px;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 24px;
+    background-color: rgb(25, 27, 31) !important;
+ }
+
+table
+{
+    border-spacing: 0 1em;
+    border-collapse: separate;
+}
+
+.lock-liquidity-container
+{
+    color: white;
+}
+
+.lp-container
+{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.rwsb
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.warning-container
+{
+    display: flex;
+    justify-content: center;
+    color: #f9a66c;
+    .icon-img
+    {
+        transform: scale(2);
+    }
+}
+
+.ic
+{
+    span
+    {
+        display: flex;
+        justify-content: center;
+    }
+
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.lcc {
+    font-family: "IBM Plex Mono";
+    display: flex;
+    align-items: center;
+
+    padding: 15px 15px;
+    // border-radius: 16px;
+    font-size: 16px;
+    background: transparent;
+    white-space: nowrap;
+    margin: 10px 0;
+
+    span:last-of-type {
+        padding: 15px 10px;
+        padding-left: 12px;
+        background: rgb(44, 47, 54);
+        border-radius: 16px;
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+    }
+}
+
+::placeholder {
+   color: gray;
+   opacity: 1; 
+ }
+
+ input
+ {
+   background: unset;
+   border: unset;
+   flex: 1 1 0;
+ }
+ 
+ input:focus{
+   outline: none;
+}
+
+*:focus {
+   outline: none;
+}
+
+.input-container {
+    color: #fff;
+    position: relative;
+    font-weight: 500;
+    font-size: 28px !important;
+    border: none;
+    outline: none;
+    white-space: nowrap;
+ }
+
+
+.lock-button-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+ 
+    button {
+       padding: 16px;
+       width: 100%;
+       color: #fff;
+       font-weight: 500;
+       font-size: 20px;
+       font-family: "Inter";
+       background-color: rgb(33, 114, 229);
+       border: 1px solid transparent !important;
+       border-radius: 24px;
+    }
+ }
+
+.llsc
+{
+    padding: 20px 0;
+    font-size: 32px;
+    // .lls
+    // {
+    //     color: #f9a66c;
+    //     font-size: 18px;
+    //     font-weight: bold;
+    // }
+}
+
+.message
+{
+    display: flex;
+    justify-content: center;
+    color: crimson;
+    font-weight: bold;
+}
+
+.buttom-container
+{
+    padding-top: 10px;
+
+    .mat-stroked-button-color
+    {
+        width: 100%;
+    }
+}
+
+h1
+{
+    padding-top: 30px;
+}
+
+.flex-end
+{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.fc
+{
+    display: flex;
+    justify-content: center;
+}
+
+button
+{
+    color: white;
+    border-color: white !important;
+}
+
+.lpth
+{
+    color:#cbe521;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 0.1mm;
+}

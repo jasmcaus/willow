@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg pt">
+    <a class="navbar-brand pf" routerLink="">
+        <!-- <img src="assets/logos/main-logo.svg" width="50" height="50" class="d-inline-block align-top" alt=""> -->
+        <img src="assets/logos/main-logo.svg" class="d-inline-block align-top" alt="">
+    </a>
+
+    <button 
+        class="navbar-toggler" 
+        type="button"
+        data-toggle="collapse" 
+        data-target="#navbarSupportedContent" 
+        aria-controls="navbarSupportedContent" 
+        aria-expanded="false" 
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div
+        class="navbar-toggle collapse navbar-collapse center" 
+        id="navbarSupportedContent"
+    >
+        <div class="navbar-nav nav-container">
+            <a aria class="nav-item nav-link" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Swap</a>
+            <a class="nav-item nav-link" routerLink="/pool" [routerLinkActive]="['active']">Pool</a>
+            <a class="nav-item nav-link" routerLink="/faucet" [routerLinkActive]="['active']">Faucet<sup>↗</sup></a>
+            <!-- <a class="nav-item nav-link" routerLink="/utility" [routerLinkActive]="['active']">Utilities</a> -->
+        </div>
+
+
+        <div *ngIf="!logined && !address" class="wallet-container">
+            <button 
+                (click)="login()"
+                mat-stroked-button 
+                class="mat-stroked-button-color">Connect Wallet</button>
+        </div>
+
+        <div *ngIf="logined" class="wallet-container">
+                <span
+                    class="address-box"
+                    [matTooltip]="address"
+                >
+                    {{ address }}
+                </span>
+            <button 
+                (click)="logout()"
+                mat-stroked-button 
+                class="mat-stroked-button-color"
+            >
+                Disconnect
+            </button>
+        </div>
+
+    </div>
+</nav>
+<app-main-window></app-main-window>

@@ -1,0 +1,467 @@
+:host {
+   color: white;
+   width: 26rem;
+   padding: 20px 0;
+}
+
+
+.main-title {
+   font-family: "IBM Plex Mono";
+   font-weight: 500 !important;
+   font-size: 24px !important;
+   margin-left: 3px;
+}
+
+
+.wrapper {
+   max-width: 640px;
+   width: 100%;
+   padding: 10px;
+   margin-top: 1rem;
+   margin-left: auto;
+   margin-right: auto;
+   border-radius: 24px;
+   background-color: rgb(25, 27, 31) !important;
+}
+
+input.mat-input-element {
+    color: white;
+}
+
+
+.down-icon-container {
+   display: flex;
+   justify-content: center;
+   margin: -5px;
+
+   .mat-icon {
+      font-size: 30px;
+      width: 30px;
+      height: 30px;
+   }
+}
+
+
+.swap-button-container {
+   margin-top: 20px;
+   margin-bottom: 20px;
+
+   button {
+      padding: 16px;
+      width: 100%;
+      color: #fff;
+      font-weight: 500;
+      font-size: 20px;
+      font-family: "Inter";
+      background-color: rgb(33, 114, 229);
+      border: 1px solid transparent;
+      border-radius: 24px;
+   }
+}
+
+
+.mat-expansion-panel {
+   background: transparent !important;
+}
+
+
+.err-button {
+   background: gray !important;
+   cursor: default !important;
+}
+
+.position {
+   cursor: pointer;
+   padding: 20px !important;
+   background: rgb(44, 47, 54);
+   border-radius: 16px;
+   margin-left: auto;
+}
+
+.token-container {
+   display: flex;
+   padding: 20px 15px;
+   border-radius: 20px 20px 0px 0px;
+   border: 1px solid rgb(25, 27, 31);
+   font-size: 18px;
+   background: #212429;
+   white-space: nowrap;
+   transition: height 1s ease 0s;
+   z-index: 99;
+
+   ::hover {
+      border: 1px solid rgb(64, 68, 79);
+   }
+
+   span {
+      cursor: pointer;
+      // padding: 10px 18px 10px 18px;
+      padding: 8px 18px;
+      background: rgb(44, 47, 54);
+      border-radius: 16px;
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+   }
+
+   input {
+      width: 100%;
+   }
+}
+
+
+.token-balance-field {
+   border-radius: 0px 0px 20px 20px !important;
+   margin-top: -5px !important;
+   z-index: 999999;
+   padding-top: 0px !important;
+   color: #abafbb !important;
+   font-family: "IBM Plex Mono" !important;
+   font-size: 14px !important;
+
+   span {
+      cursor: text !important;
+      padding: 0px !important;
+      background: transparent !important;
+      border-radius: 16px;
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+   }
+}
+
+
+.input-container {
+   color: #fff;
+   position: relative;
+   font-weight: 500;
+   font-size: 28px !important;
+   border: none;
+   outline: none;
+   white-space: nowrap;
+}
+
+::placeholder {
+   color: gray;
+   opacity: 1; 
+}
+
+
+input {
+   background: unset;
+   border: unset;
+   flex: 1 1 0;
+}
+
+
+input:focus{
+   outline: none;
+}
+
+*:focus {
+   outline: none;
+}
+
+.spinner-container {
+   display: flex;
+   justify-content: center;
+   margin-top: 1vh;
+   margin-bottom: 1vh;
+}
+
+// .mat-expansion-panel {
+//    box-shadow: unset;
+//    background: unset;
+
+//    .mat-expansion-panel-header-title {
+//       color: gray;
+//       font-size: 13px;
+//    }
+// }
+
+// ::ng-deep .mat-expansion-indicator:after {
+//    color: gray;
+// }
+
+.transaction-row-details {
+   display: flex;
+   justify-content: space-between;
+   color: gray;
+   font-size: 13px;
+   padding: 2px;
+}
+
+
+.pc {
+   display: flex;
+   justify-content: center;
+   color: gray;
+   font-size: 13px;
+   padding: 3px;
+
+   .lpp {
+      display: flex;
+      align-items: center;
+      .mat-icon {
+         transform: scale(0.8);
+         margin-top: -1px;
+      }
+   }
+   
+
+   .lpp:last-of-type {
+      .mat-icon {
+         display: none;
+      }
+   }
+}
+
+
+.ss {
+   // color: #cbe521;
+   letter-spacing: 0.1mm;
+   font-weight: bold;
+}
+
+.mat-button.mat-primary.mat-button-disabled, .mat-button.mat-accent.mat-button-disabled, .mat-button.mat-warn.mat-button-disabled, .mat-button.mat-button-disabled.mat-button-disabled, .mat-icon-button.mat-primary.mat-button-disabled, .mat-icon-button.mat-accent.mat-button-disabled, .mat-icon-button.mat-warn.mat-button-disabled, .mat-icon-button.mat-button-disabled.mat-button-disabled, .mat-stroked-button.mat-primary.mat-button-disabled, .mat-stroked-button.mat-accent.mat-button-disabled, .mat-stroked-button.mat-warn.mat-button-disabled, .mat-stroked-button.mat-button-disabled.mat-button-disable {
+   border-color: gray !important;
+   color: gray;
+}
+
+.er {
+   display: flex;
+   justify-content: center;
+   color: crimson;
+   margin: 15px 0;
+   font-weight: bold;
+}
+
+.sw {
+   display: flex;
+   justify-content: space-between;
+   color: gray;
+   font-size: 12px;
+   font-weight: bold;
+   padding: 0 20px;
+}
+
+.pool-wrapper {
+   max-width: 870px !important;
+   width: 100%;
+   padding: 20px 0px;
+} 
+
+.pool-position-container {
+   padding: 20px 15px;
+   border-radius: 20px;
+   border: 1px solid rgb(25, 27, 31);
+   font-size: 18px;
+   background: rgb(25, 27, 31) !important;
+   white-space: nowrap;
+   transition: height 1s ease 0s;
+   z-index: 99;
+
+   ::hover {
+       border: 1px solid rgb(64, 68, 79);
+   }
+}
+
+td {
+   padding-top: 20px;
+   padding-bottom: 20px;
+   padding-right: 20px;
+   border-radius: 16px 0px 0px 16px;
+}
+
+td:first-child {
+   padding-left: 20px;
+   padding-right: 0;
+}
+
+.pool {
+   cursor: pointer;
+   background: rgb(44, 47, 54);
+   border-radius: 16px;
+   margin-left: auto;
+}
+
+.position {
+   cursor: pointer;
+   padding: 20px !important;
+   background: rgb(44, 47, 54);
+   border-radius: 16px;
+   margin-left: auto;
+}
+
+.pool-title {
+   font-family: "Inter";
+   font-weight: 500;
+   font-size: 18px;
+   color: white;
+}
+
+.position-title {
+   font-family: "Inter";
+   font-weight: 500;
+   font-size: 18px;
+   color: white;
+}
+
+.accordion-div {
+   display: flex;
+   justify-content: space-between;
+   color: gray;
+   font-size: 13px;
+   margin: 3px 0;
+
+   span {
+       font-family: "Inter";
+       font-family: 500;
+       font-size: 16px;
+       color: rgb(195, 197, 203);
+   }
+}
+
+.special-margin {
+   margin-top: -40px !important;
+}
+
+
+.special-styles {
+   padding: 30px;
+}
+
+
+.active-liquidity-pool {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 24vh;
+}
+
+.active-pools-container {
+   color: white;
+   margin-top: 1vh;
+}
+
+.full-width {
+   width: 100%;
+
+   .flex-end {
+       display: flex;
+       font-family: "IBM Plex Mono" !important;
+       justify-content: flex-end;
+       border-radius: 0px 16px 16px 0px;
+   }
+}
+
+.f16 {
+   font-size: 16px;
+}
+
+.tac {
+   text-align: center;
+}
+
+table {
+   border-spacing: 0 0.5em;
+   border-collapse: separate;
+}
+
+.mat-stroked-button {
+   // border: 1px solid white !important;
+   padding: 0 12px;
+   line-height: 30px;
+   font-size: 12px;
+   color: white;
+}
+
+.phc {
+   color:#cbe521;
+   font-weight: bold;
+   font-size: 15px;
+   letter-spacing: 0.1mm;
+}
+
+.hb {
+   font-weight: bold;
+}
+
+.pr {
+   display: flex;
+   justify-content: space-between;
+   border-top: 1px solid rgba(255, 255, 255, 0.3);
+   padding-top: 10px;
+   margin-top: 10px;
+}
+
+.lpmc {
+   margin-top: 10px;
+}
+
+.mat-expansion-panel-header {
+   height: 20px;
+}
+
+.mat-expansion-panel {
+  box-shadow: unset;
+  background: unset;
+
+  .mat-expansion-panel-header-title {
+     color: gray;
+     font-size: 13px;
+  }
+}
+
+::ng-deep .mat-expansion-indicator:after {
+  color: gray;
+}
+
+.mdr {
+   display: flex;
+   justify-content: space-between;
+   color: gray;
+   font-size: 13px;
+   margin: 1px 0;
+}
+
+.pool-overview-title {
+   font-family: "IBM Plex Mono";
+   font-weight: 500;
+   font-size: 24px;
+}
+
+.positions-title {
+   font-family: "Inter";
+   font-weight: 400;
+   font-size: 16px;
+   color: rgb(143, 150, 172);
+}
+
+.pool-overview-container {
+   color: white;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   padding: 10px 0;
+   border-radius: 15px;
+}
+
+
+.pool-new-position-container {
+   margin-top: 20px;
+   margin-bottom: 20px;
+
+   button {
+      padding: 6px 8px;
+      width: 100%;
+      color: #fff;
+      font-weight: 500;
+      font-size: 16px;
+      font-family: "Inter";
+      background-color: rgb(33, 114, 229);
+      border: 1px solid transparent;
+      border-radius: 12px;
+   }
+}

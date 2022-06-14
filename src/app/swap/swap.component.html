@@ -1,0 +1,176 @@
+<div class="wrapper">
+    <h1 class="main-title">Swap</h1>
+
+    <div class="token-container">
+        <input 
+            class="input-container"
+            type="text"
+            inputmode="decimal"
+            autocomplete="off" 
+            autocorrect="off"
+            matInput 
+            (input)="tokenABalanceInput($event.target)" 
+            placeholder="0.0"
+            pattern="^[0-9]*[.,]?[0-9]*$"
+            minlength="1"
+            maxlength="79"
+        >
+
+        <span 
+            class="token-box" 
+            (click)="openTokenSelectDialog('tokenA')"
+            *ngIf="swap.get('tokenASymbol').value !== ''"
+        >
+            <img src="{{ swap.get('tokenALogo').value }}" class="token-logo" />
+            &nbsp;
+            {{swap.get('tokenASymbol').value}} <mat-icon>keyboard_arrow_down</mat-icon>
+        </span>
+        <span 
+            class="token-box" 
+            (click)="openTokenSelectDialog('tokenA')" 
+            *ngIf="swap.get('tokenASymbol').value === ''"
+        >
+            Choose a token <mat-icon>keyboard_arrow_down</mat-icon>
+        </span>
+    </div>
+    <div 
+        class="token-container token-balance-field"
+        *ngIf="swap.get('tokenAAvailable').value !== ''"
+    >
+        <span>
+            Balance: {{ swap.get('tokenAAvailable').value | amountConverter }}
+        </span>
+    </div>
+
+    <div class="down-icon-container" (click)="swapOrder()">
+        <mat-icon>keyboard_arrow_down</mat-icon>
+    </div>
+
+    <div class="token-container">
+        <input 
+            class="input-container"
+            type="text"
+            inputmode="decimal"
+            autocomplete="off" 
+            value="{{ swap.get('tokenBBalance').value | amountConverter }}" 
+            autocorrect="off"
+            matInput 
+            (input)="tokenBBalanceInput($event.target)" 
+            placeholder="0.0"
+            pattern="^[0-9]*[.,]?[0-9]*$"
+            minlength="1"
+            maxlength="79"
+        >
+
+        <span 
+            class="ssc" 
+            (click)="openTokenSelectDialog('tokenB')" 
+            *ngIf="swap.get('tokenBSymbol').value !== ''"
+        >
+            <img src="{{ swap.get('tokenBLogo').value }}" class="token-logo" />
+            &nbsp;
+            {{swap.get('tokenBSymbol').value}}<mat-icon>keyboard_arrow_down</mat-icon>
+        </span>
+        <span 
+            class="ssc" 
+            (click)="openTokenSelectDialog('tokenB')" 
+            *ngIf="swap.get('tokenBSymbol').value === ''"
+        >
+            Choose a token <mat-icon>keyboard_arrow_down</mat-icon>
+        </span>
+    </div>
+
+    <div 
+        class="token-container token-balance-field"
+        *ngIf="swap.get('tokenBAvailable').value !== ''"
+    >
+        <span>
+            Balance: {{ swap.get('tokenBAvailable').value | amountConverter }}
+        </span>
+    </div>
+
+
+    <div class="spinner-container" *ngIf="loading">
+        <mat-spinner diameter="50"></mat-spinner>
+    </div>
+
+
+    <ng-container *ngIf="swap.get('tokenBPerTokenA').value !== 0">
+        <main class="pool-position-container">
+            <div class="position">
+                <mat-accordion>
+                    <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <div class="position-title">
+                            1 {{ swap.get('tokenBSymbol').value }} = {{ swap.get('tokenBPerTokenA').value.toFixed(5) }} {{ swap.get('tokenASymbol').value }} 
+                        </div>
+                    </mat-expansion-panel-header>
+                    
+                    <br/>
+                    <div class="accordion-div">
+                        <span>Expected</span>
+                        <span>{{swap.get('expected').value}} {{swap.get('tokenBSymbol').value}}</span>
+                    </div>
+                    
+                    <div class="accordion-div" *ngIf="callSwapTokenOutForTokenIn">
+                        <span>Maximum sent after slippage </span>
+                        <span>{{swap.get('amountInMax').value}} {{swap.get('tokenASymbol').value}}</span>
+                    </div>
+
+                    <div class="accordion-div" *ngIf="!callSwapTokenOutForTokenIn">
+                        <span>Min. (after slippage)</span>
+                        <span>{{swap.get('amountOutMin').value}} {{swap.get('tokenBSymbol').value}}</span>
+                    </div>
+
+                    <div class="accordion-div">
+                        <span>Liquidity Fee</span>
+                        <span>{{ swap.get('tokenAFee').value | amountConverter }} {{ swap.get('tokenASymbol').value }}</span>
+                    </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+        </main>
+    </ng-container>
+
+
+    <div class="swap-button-container">
+        <button 
+            *ngIf="!swapping && poolExist && !insufficient_liquidity"
+            class="mat-stroked-button-color"
+            mat-stroked-button
+            appDebounceClick
+            [disabled]="!poolExist"
+            (click)="swapToken()"
+        >
+            Swap
+        </button>
+    </div>
+
+    <div class="swap-button-container">
+        <button 
+            *ngIf="!swapping && !poolExist"
+            class="err-button mat-stroked-button-color"
+            mat-stroked-button
+            appDebounceClick
+            [disabled]="true"
+        >
+            Pool not found
+        </button>
+    </div>
+
+    <div class="swap-button-container">
+        <button 
+            *ngIf="!swapping && insufficient_liquidity"
+            class="err-button mat-stroked-button-color"
+            mat-stroked-button
+            appDebounceClick
+            [disabled]="true"
+        >
+            Insufficient Liquidity.
+        </button>
+    </div>
+
+    <div class="spinner-container" *ngIf="swapping">
+        <mat-spinner diameter="40"></mat-spinner>
+    </div>
+</div>

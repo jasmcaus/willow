@@ -1,0 +1,45 @@
+.task-header 
+{
+    background-color: transparent;
+    padding: 0 5px;
+    height: 20px;
+}
+
+.fx-spacer 
+{
+    flex: 1 1 auto;
+}
+
+.dialog-container
+{
+    width: 300px;
+    display: flex;
+    flex-flow: column;
+
+    label
+    {
+        cursor: pointer;
+        margin: 15px 0;
+
+        button
+        {
+            margin-right: 10px;
+        }
+    }
+}
+
+::ng-deep .wallet-dialog-container {
+    mat-dialog-container {
+      border-radius: 25px;
+    }
+
+    .mat-button-focus-overlay { 
+        background: unset !important; 
+    }
+  }
+
+h1
+{
+    color: white;
+    padding: 5px 0;
+}

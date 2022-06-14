@@ -1,0 +1,172 @@
+.back-icon
+{
+    margin-bottom: 4vh;
+    cursor: pointer;
+}
+
+:host
+{
+   width: 26rem;
+   color: white;
+}
+
+.wrapper {
+   max-width: 640px;
+   width: 100%;
+   padding: 20px 15px;
+   margin-top: 1rem;
+   margin-left: auto;
+   margin-right: auto;
+   border-radius: 24px;
+   background-color: rgb(25, 27, 31) !important;
+}
+
+
+.input-container {
+   color: #fff;
+   position: relative;
+   font-weight: 500;
+   font-size: 28px !important;
+   border: none;
+   outline: none;
+   white-space: nowrap;
+}
+
+.liquidity-container {
+   display: flex;
+   cursor: pointer;
+   align-items: center;
+   align-self: center;
+   padding: 20px 15px;
+   border-radius: 20px;
+   border: 1px solid rgb(25, 27, 31);
+   font-size: 18px;
+   background: rgb(44, 47, 54);
+   white-space: nowrap;
+   transition: height 1s ease 0s;
+   z-index: 99;
+
+   ::hover {
+      border: 1px solid rgb(64, 68, 79);
+   }
+
+   span {
+   //    cursor: pointer;
+   //    // padding: 10px 18px 10px 18px;
+   //    padding: 8px 18px;
+   //    background: rgb(44, 47, 54);
+   //    border-radius: 16px;
+   //    margin-left: auto;
+      margin: 0 auto !important;
+      // display: flex;
+      align-items: center;
+   }
+}
+
+.add-button-container {
+   cursor: pointer;
+   margin-top: 20px;
+   margin-bottom: 20px;
+
+   button {
+      padding: 16px;
+      width: 100%;
+      color: #fff;
+      font-weight: 500;
+      font-size: 20px;
+      font-family: "Inter";
+      background-color: rgb(33, 114, 229);
+      border: 1px solid transparent;
+      border-radius: 24px;
+   }
+
+   .disabled {
+      cursor: default !important;
+      background: #636A77 !important;
+      
+   }
+}
+
+.error {
+   font-family: "IBM Plex Mono" !important;
+   font-weight: 600;
+   font-size: 17px;
+}
+
+.main-title {
+   font-family: "IBM Plex Mono";
+   font-weight: 500 !important;
+   font-size: 24px !important;
+   margin-left: 3px;
+}
+
+.lpA-container,
+.lpB-container
+{
+   display: flex;
+   padding: 20px;
+   border-radius: 5px;
+   border-top-left-radius: 20px;
+   border-bottom-right-radius: 20px;
+   font-size: 16px;
+   background: #123c39;
+   cursor: pointer;
+   font-weight: bold;
+   letter-spacing: 0.1mm;
+
+   span:first-of-type
+   {
+      flex: 1 1 0;
+   }
+}
+
+::placeholder {
+   color: gray;
+   opacity: 1; 
+ }
+
+ input
+ {
+   background: unset;
+   border: unset;
+   flex: 1 1 0;
+ }
+ 
+ input:focus{
+   outline: none;
+}
+
+*:focus {
+   outline: none;
+}
+
+.add-icon-container
+{
+   display: flex;
+   justify-content: center;
+
+   .mat-icon
+   {
+   font-size: 30px;
+   width: 30px;
+   height: 30px;
+   }
+}
+
+.deploy-button-container
+{
+  margin-top: 25px;
+  button
+  {
+     width: 100%;
+     padding: 4px 0;
+  }
+}
+
+.error
+{
+   display: flex;
+   justify-content: center;
+   margin: 20px;
+   color: crimson;
+}

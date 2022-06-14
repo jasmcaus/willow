@@ -1,0 +1,139 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;700&display=swap');
+
+
+body {
+    font-family: "Inter", sans-serif !important;
+    background-color: radial-gradient(150.6% 98.22% at 48.06% 0%, rgba(130, 71, 229, 0.6) 0%, rgba(200, 168, 255, 0) 100%), #1F2128;
+}
+
+.mat-stroked-button {
+    border: 1px solid transparent !important;
+}
+.center  {
+    justify-content: center;
+}
+
+html, body { 
+    height: 100%; 
+}
+
+body { 
+    margin: 0; 
+    font-family: "IBM Plex Mono", 
+    sans-serif; 
+}
+
+h1, input {
+    color: white;
+}
+
+h1 {
+    font-size: 16px !important;
+    font-weight: bold !important;
+    letter-spacing: 0.1mm !important;
+}
+
+.mat-expansion-panel {
+    padding: 5px 0px !important;
+}
+
+.mat-stroked-button-color {
+    color:#fff;
+}
+
+.custom-modalbox {
+    mat-dialog-container {
+        background: #191B1F;
+        color: white;
+        border-radius: 15px;
+        
+        span {
+            color: white;
+        }
+    }
+}
+
+.custom-token-select-modalbox-no-height {
+    mat-dialog-container {
+        background: #191B1F;
+        color: white;
+        border-radius: 15px;
+        padding-right: 0;
+        padding-left: 0;
+        width: 400px;
+
+        span {
+            color: white;
+        }
+    }
+}
+
+.custom-token-select-modalbox {
+    mat-dialog-container {
+        background: #191B1F;
+        color: white;
+        border-radius: 15px;
+        padding-right: 0;
+        padding-left: 0;
+        width: 400px;
+        min-height: 70vh;
+
+        span {
+            color: white;
+        }
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.slide-In-Out-Container {
+   max-height: 0px;
+   overflow-y: hidden;
+   transition: ease-in-out 400ms max-height;
+}
+
+.slide-In-Out-Container.opened  {
+   margin-top: 30px;
+   max-height: 100%;
+   transition: ease-in-out 600ms max-height;
+}
+
+
+.mat-progress-spinner circle, .mat-spinner circle {
+    stroke: #cbe521;
+}
+
+.spc {
+    display: flex;
+    justify-content: center;
+}
+
+.txc {
+   text-align: center;
+   font-weight: bold;
+   margin-top: 4vh;
+}
+
+
+.token-logo {
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(white 50%, #ffffff00 calc(75% + 1px), #ffffff00 100%) !important;
+    border-radius: 50% !important;
+    -mox-box-shadow: 0 0 1px black !important;
+    -webkit-box-shadow: 0 0 1px black !important;
+    box-shadow: 0 0 1px black !important;
+    // border: 0px solid rgba(255, 255, 255, 0) !important;
+}

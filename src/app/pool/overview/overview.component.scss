@@ -1,0 +1,23 @@
+.pool-overview-container
+{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 0;
+    border-radius: 15px;
+
+}
+.fb
+{
+    font-weight: bold;
+}
+
+.mat-stroked-button {
+    border: 1px solid white !important;
+    padding: 0 12px;
+    line-height: 30px;
+    font-size: 12px;
+    color: white;
+}

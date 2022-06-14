@@ -1,0 +1,30 @@
+.icon-container
+{
+    font-size: 18px; 
+    display: flex; 
+    justify-content: center; 
+    height: 50px;
+
+    .icon-img
+    {
+        color: #f9a66c;
+        transform: scale(2);
+    }
+}
+
+p
+{
+    font-size: 15px;
+}
+
+.confirm-container
+{
+    margin-top: 20px;
+}
+
+.confirm-button
+{
+    width: 100%; 
+    color: #f9a66c; 
+    border-color: #f9a66c;
+}

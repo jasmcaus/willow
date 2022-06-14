@@ -1,0 +1,133 @@
+<div class="pool-wrapper">
+    <div class="spc" *ngIf="loading">
+        <mat-spinner></mat-spinner>
+    </div>
+
+    <div class="active-pools-container">
+        <div class="pool-overview-container"> 
+            <div class="pool-overview-title">Pools Overview</div>
+            <div class="pool-new-position-container">
+                <button 
+                    class="mat-stroked-button-color" 
+                    appDebounceClick
+                    routerLink="/pool/create"
+                >
+                    + New Pool
+                </button>
+            </div>
+        </div>
+
+
+        <ng-container *ngIf="all_pools.length !== 0; else specialstyles">
+            <main class="pool-position-container">
+                <div class="active-pools-container" *ngIf="!loading">
+                    <table class="full-width">
+                        <ng-container *ngFor="let pool of all_pools">
+                            <tr 
+                                class="pool"
+                                routerLink="/pool/view/{{ pool['hash'] }}"
+                            >
+                                <td class="pool-title">
+                                    <img src="{{ pool['tokenA_logouri'] }}" class="token-logo">
+                                    <img src="{{ pool['tokenB_logouri'] }}" class="token-logo">
+                                    &nbsp;
+                                    {{pool['tokenA_symbol']}} / {{pool['tokenB_symbol']}}
+                                </td>
+                                <td class="flex-end">
+                                    {{pool['formattedTotalSupply']}}
+                                </td>
+                            </tr>
+                        </ng-container>
+                    </table>
+                </div>
+            </main>
+        </ng-container>
+        
+        <ng-template #specialstyles>
+            <main class="positions-container special-styles">
+                <div class="positions-title">There are no active pools. Try creating one!</div>
+            </main>
+        </ng-template>
+    </div>
+
+
+
+
+    <br/>
+    <br/>
+    <br/>
+
+
+
+    <div class="active-pools-container">
+        <div class="pool-overview-container">
+            <div class="pool-overview-title">Your positions</div>
+            <div class="pool-new-position-container">
+                <button 
+                    class="mat-stroked-button-color" 
+                    appDebounceClick
+                    routerLink="/pool/add-liquidity"
+                >
+                    + New Position
+                </button>
+            </div>
+        </div>
+        
+
+        <ng-container *ngIf="logined && !loading; else specialstyleslogin">
+            <ng-container *ngIf="user_positions.length !== 0; else specialstyles">
+                <main class="pool-position-container">
+                    <ng-container *ngFor="let pool of user_positions">                       
+                        <div class="position">
+                            <mat-accordion>
+                                <mat-expansion-panel>
+                                <mat-expansion-panel-header>
+                                    <div class="position-title">
+                                        <img src="{{ pool['tokenA_logouri'] }}" class="token-logo">
+                                        <img src="{{ pool['tokenB_logouri'] }}" class="token-logo">
+                                        &nbsp;
+                                        {{pool['tokenA_symbol']}} / {{pool['tokenB_symbol']}}
+                                    </div>
+                                </mat-expansion-panel-header>
+                                
+                                <br/>
+                                <div class="accordion-div">
+                                    <span>Total supply</span>
+                                    <span>{{pool['totalSupply'] | amountConverter}}</span>
+                                </div>
+                                <div class="accordion-div">
+                                    <span>Your position</span>
+                                    <span>{{pool['user_liquidity'] | amountConverter}}</span>
+                                </div>
+                                <div class="accordion-div">
+                                    <span>Shares of pool</span>
+                                    <span>{{pool['sharesOfPool']}} %</span>
+                                </div>
+                                <div class="accordion-div">
+                                    <span>Total {{pool['tokenA_symbol']}}</span>
+                                    <span>{{pool['tokenA_amount'] | amountConverter}} {{pool['tokenA_symbol']}}</span>
+                                </div> 
+                                <div class="accordion-div">
+                                    <span>Total {{pool['tokenB_symbol']}}</span>
+                                    <span>{{pool['tokenB_amount'] | amountConverter}} {{pool['tokenB_symbol']}}</span>
+                                </div>
+                                </mat-expansion-panel>
+                            </mat-accordion>
+                        </div>
+                    </ng-container>
+                </main>
+            </ng-container>
+            
+            <ng-template #specialstyles>
+                <main class="positions-container special-styles">
+                    <div class="positions-title">Your active positions will appear here</div>
+                </main>
+            </ng-template>
+        </ng-container>
+        <ng-template #specialstyleslogin>
+            <main class="positions-container special-styles">
+                <div class="positions-title">Connect your wallet to view your active positions.</div>
+            </main>
+        </ng-template>
+    </div>
+</div>
